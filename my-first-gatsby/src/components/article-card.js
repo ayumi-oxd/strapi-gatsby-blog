@@ -6,13 +6,13 @@ const ArticleCard = ({ article }) => {
   return (
     <Link
       to={`/article/${article.id}`}
-      className="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md"
+      className="overflow-hidden rounded-lg shadow-md transition-shadow hover:shadow-lg"
     >
       {/* <GatsbyImage
         image={getImage(article.cover?.localFile)}
         alt={article.cover?.alternativeText}
       /> */}
-      <img src={`http://localhost:1337${article.Image.url}`}/>
+      <img src={`http://localhost:1337${article.Image.url}`} alt={article.Title} className="w-full h-96 object-cover"/>
       <div className="px-4 py-4">
         <h3 className="font-bold text-neutral-700">{article.Title}</h3>
         <p className="line-clamp-2 mt-2 text-neutral-500">

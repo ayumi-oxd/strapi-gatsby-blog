@@ -21,19 +21,7 @@ const IndexPage = () => {
       }
     }
   `)
-  // const { allStrapiArticle, strapiGlobal } = useStaticQuery(graphql`
-  //   query {
-  //     allStrapiArticle {
-  //       nodes {
-  //         ...ArticleCard
-  //       }
-  //     }
-  //     strapiGlobal {
-  //       siteName
-  //       siteDescription
-  //     }
-  //   }
-  // `)
+
 
   return (
     <Layout>
