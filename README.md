@@ -4,8 +4,6 @@ Created this app to learn how Strapi and Gatsby work.
 
 Firstly, tried to create the app with `yarn create strapi-starter gatsby-blog gatsby-blog` based on [this article](https://strapi.io/blog/build-a-static-blog-with-gatsby-and-strapi), but didn't work well so that created an app for each Strapi / Gatsby.
 
-Gatsby starter for creating a blog with Strapi.
-
 
 ## Prerequisites
 
@@ -31,7 +29,7 @@ The installation requires the following software to be already installed on your
 
 3. Go to `Content-Type Builder` and click `Create new collection type` to create `Article` collection
 
-4. Add 2 `Text` fields for title and content, then add `Media` field for image
+4. Add two `Text` fields for title and content, then add `Media` field for image
 
 5. Click `Save`
 
@@ -97,6 +95,6 @@ STRAPI_API_URL=http://localhost:1337
 }
 ```
 
-6. You may need to re-run `gatsby develop` after 4 and 5
+6. You may need to re-run `gatsby develop` after 5
 
 ##### If you stop running backend, you can restart with `gatsby develop`

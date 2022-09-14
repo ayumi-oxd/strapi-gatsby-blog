@@ -13,13 +13,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
                 id
+                Title
+                Date
+                Image {
+                  url
+                }
+                Content {
+                  data {
+                    Content
+                  }
+                }            
             }
           }
         }
       }
     `
   )
-  console.log(result)
 
   if (result.errors) {
     reporter.panicOnBuild(
@@ -30,7 +39,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const articles = result.data.allStrapiArticle.edges
-  console.log(articles)
 
   if (articles.length > 0) {
     articles.forEach((article) => {
