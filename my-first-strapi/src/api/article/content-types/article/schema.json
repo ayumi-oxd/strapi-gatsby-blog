@@ -12,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Content": {
+    "content": {
       "type": "richtext"
     },
-    "Image": {
+    "image": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -29,14 +29,14 @@
         "audios"
       ]
     },
-    "Date": {
+    "date": {
       "type": "date"
     },
-    "FK": {
+    "fk": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
-      "inversedBy": "PK"
+      "inversedBy": "pk"
     }
   }
 }

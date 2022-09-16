@@ -15,8 +15,8 @@ const IndexPage = () => {
         }
       }
       strapiGlobal {
-        Title
-        Description
+        title
+        description
       }
     }
   `)
@@ -24,8 +24,8 @@ const IndexPage = () => {
   return (
     <Layout>
      <Headings
-       title={strapiGlobal.Title}
-       description={strapiGlobal.Description}
+       title={strapiGlobal.title}
+       description={strapiGlobal.description}
      />
      <main>
        <ArticlesGrid articles={allStrapiArticle.edges} />

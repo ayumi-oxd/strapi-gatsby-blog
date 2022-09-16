@@ -14,15 +14,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               id
-              Title
-              Date
-              Image {
+              title
+              date
+              image {
                 url
               }
-              Content {
+              content {
                 data {
-                  Content
+                  content
                 }
+              }
+              fk {
+                id
+                name
               }            
             }
           }
@@ -38,22 +42,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               id
-              Name
-              PK {
+              name
+              pk {
                 id
-                Title
-                Date
-                Image {
+                title
+                date
+                image {
                   url
                 }
-                Content {
+                content {
                   data {
-                    Content
+                    content
                   }
                 }
-                FK {
+                fk {
                   id
-                  Name
+                  name
                 }
               }
             }

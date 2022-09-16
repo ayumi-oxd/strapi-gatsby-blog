@@ -12,14 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "PK": {
+    "pk": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article",
-      "mappedBy": "FK"
+      "mappedBy": "fk"
     }
   }
 }

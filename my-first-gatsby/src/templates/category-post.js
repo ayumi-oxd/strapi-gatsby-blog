@@ -10,7 +10,7 @@ const CategoryPage = ({ data }) => {
     <Layout>
       <main>
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {category.PK.map((item, i) => (
+          {category.pk.map((item, i) => (
             <ArticleCard article={item} key={i} />
           ))}
         </div>
@@ -23,22 +23,22 @@ export const pageQuery = graphql`
   query($id: String) {
     strapiCategory(id:{eq: $id}) {
       id
-      Name
-      PK {
+      name
+      pk {
         id
-        Title
-        Date
-        Image {
+        title
+        date
+        image {
           url
         }
-        Content {
+        content {
           data {
-            Content
+            content
           }
         }
-        FK {
+        fk {
           id
-          Name
+          name
         }
       }
     }

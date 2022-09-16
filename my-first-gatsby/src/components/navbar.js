@@ -9,16 +9,16 @@ const Navbar = () => {
         edges {
           node {
             id
-            Name
-            PK {
-                Title
-                Date
-                Image {
+            name
+            pk {
+                title
+                date
+                image {
                   url
                 }
-                Content {
+                content {
                   data {
-                    Content
+                    content
                   }
                 }
             }
@@ -38,7 +38,7 @@ const Navbar = () => {
           {allStrapiCategory.edges.map((category, i) => (
             <Link className="mx-2" to={`/category/${category.node.id}`} key={i}>
               <div className="text-xs inline-flex items-center font-bold mt-3 px-3 py-1 bg-orange-200 text-orange-700 rounded-full">
-                # {category.node.Name}
+                # {category.node.name}
               </div>
             </Link>
           ))}
