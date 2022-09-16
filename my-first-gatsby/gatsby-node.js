@@ -51,6 +51,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     Content
                   }
                 }
+                FK {
+                  id
+                  Name
+                }
               }
             }
           }

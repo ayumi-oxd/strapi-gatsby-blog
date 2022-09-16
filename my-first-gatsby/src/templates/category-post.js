@@ -10,7 +10,9 @@ const CategoryPage = ({ data }) => {
     <Layout>
       <main>
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <ArticleCard article={category} />
+          {category.PK.map((item, i) => (
+            <ArticleCard article={item} key={i} />
+          ))}
         </div>
       </main>
     </Layout>
@@ -33,6 +35,10 @@ export const pageQuery = graphql`
           data {
             Content
           }
+        }
+        FK {
+          id
+          Name
         }
       }
     }

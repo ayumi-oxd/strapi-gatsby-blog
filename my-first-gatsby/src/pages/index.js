@@ -5,33 +5,12 @@ import Headings from "../components/headings"
 import ArticlesGrid from "../components/articles-grid"
 
 const IndexPage = () => {
-  const { allStrapiArticle, allStrapiCategory, strapiGlobal } = useStaticQuery(graphql`
+  const { allStrapiArticle, strapiGlobal } = useStaticQuery(graphql`
     query {
       allStrapiArticle {
         edges {
           node {
             ...ArticleCard
-          }
-        }
-      }
-      allStrapiCategory {
-        edges {
-          node {
-            id
-            Name
-            PK {
-                id
-                Title
-                Date
-                Image {
-                  url
-                }
-                Content {
-                  data {
-                    Content
-                  }
-                }
-            }
           }
         }
       }
@@ -49,8 +28,7 @@ const IndexPage = () => {
        description={strapiGlobal.Description}
      />
      <main>
-       <ArticlesGrid articles={allStrapiCategory.edges} />
-       {/* <ArticlesGrid articles={allStrapiArticle.edges} /> */}
+       <ArticlesGrid articles={allStrapiArticle.edges} />
      </main>
     </Layout>
   )
