@@ -5,6 +5,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const articlePost = path.resolve("./src/templates/article-post.js")
+  const categoryPost = path.resolve("./src/templates/category-post.js")
 
   const result = await graphql(
     `
@@ -12,6 +13,33 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         allStrapiArticle {
           edges {
             node {
+              id
+              Title
+              Date
+              Image {
+                url
+              }
+              Content {
+                data {
+                  Content
+                }
+              }            
+            }
+          }
+        }
+      }
+    `
+  )
+
+  const resultTwo = await graphql(
+    `
+      {
+        allStrapiCategory {
+          edges {
+            node {
+              id
+              Name
+              PK {
                 id
                 Title
                 Date
@@ -22,7 +50,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   data {
                     Content
                   }
-                }            
+                }
+              }
             }
           }
         }
@@ -37,8 +66,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     )
     return
   }
+  if (resultTwo.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your Strapi articles`,
+      result.errors
+    )
+    return
+  }
 
   const articles = result.data.allStrapiArticle.edges
+  const categories = resultTwo.data.allStrapiCategory.edges
 
   if (articles.length > 0) {
     articles.forEach((article) => {
@@ -47,6 +84,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         component: articlePost,
         context: {
           id: article.node.id,
+        },
+      })
+    })
+  }
+
+  if (categories.length > 0) {
+    categories.forEach((category) => {
+      createPage({
+        path: `/category/${category.node.id}`,
+        component: categoryPost,
+        context: {
+          id: category.node.id
         },
       })
     })

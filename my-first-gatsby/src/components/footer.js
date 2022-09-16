@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="mt-16 py-8 text-neutral-700">
-      <div className="container">
+      <div>
         <p>Copyright {currentYear}</p>
       </div>
     </footer>

@@ -2,7 +2,7 @@ import React from "react"
 
 const Headings = ({ title, description }) => {
   return (
-    <header className="container mx-auto mt-8">
+    <header className="mt-8">
       <h1 className="text-6xl font-bold text-neutral-700">{title}</h1>
       {description && (
         <p className="mt-4 text-2xl text-neutral-500">{description}</p>
