@@ -1,11 +1,10 @@
 {
-  "kind": "collectionType",
-  "collectionName": "globals",
+  "kind": "singleType",
+  "collectionName": "sites",
   "info": {
-    "singularName": "global",
-    "pluralName": "globals",
-    "displayName": "Global",
-    "description": ""
+    "singularName": "site",
+    "pluralName": "sites",
+    "displayName": "Site"
   },
   "options": {
     "draftAndPublish": true

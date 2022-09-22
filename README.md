@@ -1,5 +1,7 @@
 # Strapi Gatsby Blog
 
+![01](https://user-images.githubusercontent.com/90415568/191629846-5e1a1b93-c282-4d97-83d0-f273b318ad27.png)
+
 Created this app to learn how Strapi and Gatsby work.
 
 Firstly, tried to create the app with `yarn create strapi-starter gatsby-blog gatsby-blog` based on [this article](https://strapi.io/blog/build-a-static-blog-with-gatsby-and-strapi), but didn't work well so that created an app for each Strapi / Gatsby.
@@ -29,7 +31,11 @@ The installation requires the following software to be already installed on your
 
 3. Go to `Content-Type Builder` and click `Create new collection type` to create `Article` collection
 
+![02](https://user-images.githubusercontent.com/90415568/191629859-5f86e008-132c-48cf-b647-ca9f76c0ac16.png)
+
 4. Add two `Text` fields for title and content, then add `Media` field for image
+
+![04](https://user-images.githubusercontent.com/90415568/191629864-c501ea0b-2133-47b3-ad64-e3a341caddf8.png)
 
 5. Click `Save`
 
@@ -39,7 +45,7 @@ The installation requires the following software to be already installed on your
 
 8. Go to `Settings` > `USERS & PERMISSIONS PLUGIN` then click `Roles`
 
-9. Click `Public` and `Article`, then check `find` and `findOne`
+9. Click `Public` and `Article`, then check `find` and `findOne` (if you create single type, check only `find`)
 
 10. Click `Save`
 
@@ -49,7 +55,9 @@ The installation requires the following software to be already installed on your
 
 12. Click `Create new API Token` and choose `Full access`
 
-13. Click `Save` and copy token, then paste it in `.env.development` file at frontend
+![05](https://user-images.githubusercontent.com/90415568/191629866-5c8d505e-731b-4a95-bea7-244ce94ba923.png)
+
+13. Click `Save` and copy token, then paste it in `.env` file at frontend
 
 14. Access to `http://localhost:1337/api/articles` to check your API data
 
@@ -74,7 +82,7 @@ The installation requires the following software to be already installed on your
 
 #### Use GraphQL to get backend data
 
-4. Create a `.env.development` file and add API token
+4. Create a `.env` file and add API token
 
 ```
 STRAPI_TOKEN=your-api-token
@@ -89,12 +97,18 @@ STRAPI_API_URL=http://localhost:1337
     options: {
         apiURL: process.env.STRAPI_API_URL || "http://localhost:1337",
         accessToken: process.env.STRAPI_TOKEN,
-        collectionTypes: ['article'],
+        collectionTypes: [],
         singleTypes: [],
     }
 }
 ```
 
-6. You may need to re-run `gatsby develop` after 5
+6. Add your collection types / single types  in `collectionTypes` / `singleTypes`
+
+```
+collectionTypes: ['article'],
+```
+
+7. You may need to re-run `gatsby develop` after 6
 
 ##### If you stop running backend, you can restart with `gatsby develop`

@@ -5,7 +5,7 @@ import Headings from "../components/headings"
 import ArticlesGrid from "../components/articles-grid"
 
 const IndexPage = () => {
-  const { allStrapiArticle, strapiGlobal } = useStaticQuery(graphql`
+  const { allStrapiArticle, strapiSite } = useStaticQuery(graphql`
     query {
       allStrapiArticle {
         edges {
@@ -14,7 +14,7 @@ const IndexPage = () => {
           }
         }
       }
-      strapiGlobal {
+      strapiSite {
         title
         description
       }
@@ -24,8 +24,8 @@ const IndexPage = () => {
   return (
     <Layout>
      <Headings
-       title={strapiGlobal.title}
-       description={strapiGlobal.description}
+       title={strapiSite.title}
+       description={strapiSite.description}
      />
      <main>
        <ArticlesGrid articles={allStrapiArticle.edges} />
