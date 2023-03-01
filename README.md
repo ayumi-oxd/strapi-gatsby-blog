@@ -45,7 +45,7 @@ The installation requires the following software to be already installed on your
 
 8. Go to `Settings` > `USERS & PERMISSIONS PLUGIN` then click `Roles`
 
-9. Click `Public` and `Article`, then check `find` and `findOne` (if you create single type, check only `find`)
+9. Click `Publish` and `Article`, then check `find` and `findOne` (if you create single type, check only `find`)
 
 10. Click `Save`
 
